@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Stardust{% endblock %}</title>
+    <link rel="icon" href="{{ asset('img/logo.svg') }}">
+    {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+<nav class="navbar w-full h-24 flex align-middle place-content-between px-8 fixed backdrop-blur-[4px] z-[100]">
+    <div class="nav-logo flex self-center">
+        <a class="flex" href="#">
+            <img class="img-logo" src="{{ asset('img/logo.svg') }}" alt="Logo">
+            <h1 class="text-3xl pl-3">
+                Stardust
+            </h1>
+        </a>
+    </div>
+    <ul class="nav-list flex self-center">
+        <li class="nav-item text-1xl">
+            <a href="#" class="nav-link p-3">Rooms</a>
+        </li>
+        <li class="nav-item text-1xl">
+            <a href="#" class="nav-link p-3">Reservations</a>
+        </li>
+        <li class="nav-item text-1xl">
+            <a href="#" class="nav-link p-3">Services</a>
+        </li>
+        <li class="nav-item text-1xl">
+            <a href="#" class="nav-link p-3">Contact</a>
+        </li>
+        <li class="nav-item text-1xl">
+            <a href="#" class="nav-link p-3">Log in</a>
+        </li>
+        <li class="nav-item text-1xl">
+            <a href="#" class="nav-link p-3">Register</a>
+        </li>
+        {#            <li class="nav-item text-1xl"> #}
+        {#                <a href="#" class="nav-link p-3">Log out</a> #}
+        {#            </li> #}
+    </ul>
+</nav>
+{% block content %}{% endblock %}
+</body>
+</html>

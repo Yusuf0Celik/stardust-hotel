@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }}{% endblock %}
+
+{% block content %}
+    <section id="hero-section" class="hero-section h-[70vh] bg-black">
+        <div class="hero-overlay absolute w-full h-[70vh] z-[20]" style="background-image: url('{{ asset('img/hero-banner.png') }}')"></div>
+        <div class="hero-title z-[30] relative text-4xl text-white flex place-content-center pt-[20vh]">
+            <h1>
+                Make a resevation <br>
+                today and plan the
+            </h1>
+            <h2 class="text-[7rem] pl-8 pt-[5vh] text-[#0094FF]">Perfect Getaway</h2>
+        </div>
+    </section>
+    <section class="datepicker w-full flex place-content-center absolute bottom-[27%]">
+        <div class="datepicker-box bg-[#F8F9FA] w-min px-5 py-7 flex gap-4 z-[20] shadow-2xl">
+            <input class="p-[12px]" type="date" placeholder="Select Date">
+            <input class="p-[12px]" type="date" placeholder="Select Date">
+            <input type="text" readonly>
+            <input type="text" readonly>
+        </div>
+    </section>
+{% endblock %}
